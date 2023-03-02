@@ -20,3 +20,20 @@ http_archive(
     strip_prefix = "Catch2-3.3.2",
     urls = ["https://github.com/catchorg/Catch2/archive/v3.3.2.tar.gz"],
 )
+
+http_archive(
+    name = "mongoose",
+    build_file_content = """
+cc_library(
+    name = "mongoose",
+    srcs = ["mongoose.c"],
+    hdrs = ["mongoose.h"],
+    includes = ["./"],
+    include_prefix = "mongoose",
+    visibility = ["//visibility:public"]
+)
+""",
+    sha256 = "09d456350cca0895e52ea269a3b3c25dae2ff4cc374a9ed90867594042af2277",
+    strip_prefix = "mongoose-7.9",
+    urls = ["https://github.com/cesanta/mongoose/archive/7.9.tar.gz"],
+)

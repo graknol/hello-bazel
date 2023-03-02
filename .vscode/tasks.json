@@ -13,6 +13,12 @@
             }
         },
         {
+            "label": "Build everything (release)",
+            "type": "shell",
+            "command": "bazel build ... --define release=true",
+            "group": "build"
+        },
+        {
             "label": "Run all tests",
             "type": "shell",
             "command": "bazel test ...",
